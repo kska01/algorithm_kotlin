@@ -1,17 +1,12 @@
 fun main() {
-    val list = MutableList(30) {0}
-
-    for (i in 1..30) {
-        list[i - 1] = i
-    }
+    val list = MutableList(30) {false}
 
     repeat(28) {
         val input = readln().toInt()
-        if (list.contains(input)) {
-            list.remove(input)
-        }
+        list[input - 1] = true
     }
 
-    println(list.min())
-    println(list.max())
+    list.forEachIndexed { index, value ->
+        if (!value) println(index + 1)
+    }
 }
