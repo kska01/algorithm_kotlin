@@ -1,0 +1,1 @@
+fun main() = println(readln().toUInt() * 4.toUInt())
